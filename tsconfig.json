@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "moduleResolution": "nodenext",
+    "target": "ES2024",
+    "module": "ESNext",
+    "lib": ["ES2024"]
+  }
+}
