@@ -3,7 +3,7 @@
     "outDir": "dist/",
     "moduleResolution": "nodenext",
     "target": "ES2024",
-    "module": "ESNext",
+    "module": "NodeNext",
     "lib": ["ES2024"]
   }
 }
