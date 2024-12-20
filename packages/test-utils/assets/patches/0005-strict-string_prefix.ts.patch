@@ -1,7 +1,7 @@
 From ea95cbb2248642dbf368ec45cccd35cd029631b5 Mon Sep 17 00:00:00 2001
 From: Contributor 2 <contributor2@example.com>
 Date: Mon Sep 17 00:00:00 2001
-Subject: [PATCH] strict string_prefix
+Subject: [PATCH] strict string_prefix.ts
 
 ---
  src/string_prefix.ts | 3 +--

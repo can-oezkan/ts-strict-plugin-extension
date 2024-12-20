@@ -1,0 +1,10 @@
+{
+  "name": "@ts-strict-plugin-extension/test-utils",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest"
+  },
+  "type": "module"
+}
