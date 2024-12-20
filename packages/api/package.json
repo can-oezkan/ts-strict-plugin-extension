@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@ts-strict-plugin-extension/test-utils": "0.0.1"
   },
   "peerDependencies": {
     "@ts-strict-plugin-extension/common": "0.0.1"
