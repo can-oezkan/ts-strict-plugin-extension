@@ -1,0 +1,12 @@
+{
+  "name": "@ts-strict-plugin-extension/api",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "@ts-strict-plugin-extension/common": "0.0.1"
+  },
+  "type": "module"
+}
