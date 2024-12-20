@@ -1,8 +1,9 @@
+import * as testUtils from '@ts-strict-plugin-extension/test-utils';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { expect, test } from 'vitest';
-import { runGitCommand } from '../src/git.js';
+import { getInitialStrictIgnoreCommit, runGitCommand } from '../src/git.js';
 
 test('runGitCommand', async () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'api-test-'));
@@ -11,4 +12,19 @@ test('runGitCommand', async () => {
   const output = await runGitCommand(['branch', '--show-current'], { cwd: directory });
 
   expect(output).toEqual('main\n');
+});
+
+test('getInitialStrictIgnoreCommit', async () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'api-test-'));
+  testUtils.init(directory);
+  testUtils.setupStrictPlugin(directory);
+  testUtils.strictSum(directory);
+  testUtils.strictStringSuffix(directory);
+
+  const commit = await getInitialStrictIgnoreCommit(directory);
+
+  const commitMessage = await runGitCommand(['show', '-s', '--format=%s', commit], {
+    cwd: directory,
+  });
+  expect(commitMessage).toBe('init ts strict plugin\n');
 });

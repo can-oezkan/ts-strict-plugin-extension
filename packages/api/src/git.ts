@@ -1,12 +1,11 @@
 import { spawn } from 'node:child_process';
 
-export async function getInitialStrictIgnoreCommit(directory: string): Promise<string> {
-  const log = await runGitCommand(['log', '--oneline'], { cwd: directory });
-  const lines = log.split('\n');
-  const commit = lines[lines.length - 1].split(' ')[0];
-  return commit;
-}
-
+/**
+ * Run a git command and return the output.
+ * @param args The arguments to pass to the git command.
+ * @param options The options to pass to the git command.
+ * @returns The output of the git command.
+ */
 export async function runGitCommand(args: string[], options?: { cwd?: string }): Promise<string> {
   return new Promise((resolve, reject) => {
     const childProcess = spawn('git', args, { cwd: options?.cwd });
@@ -30,4 +29,21 @@ export async function runGitCommand(args: string[], options?: { cwd?: string }):
       }
     });
   });
+}
+
+/**
+ * Get the commit hash of the first commit that added a `// @ts-strict-ignore` comment.
+ *
+ * @param directory The directory to search for the commit.
+ * @returns The commit hash of the first commit that added a `// @ts-strict-ignore` comment.
+ */
+export async function getInitialStrictIgnoreCommit(directory: string): Promise<string> {
+  const log = await runGitCommand(
+    ['log', '--reverse', '--format=%h', '-S', '// @ts-strict-ignore'],
+    {
+      cwd: directory,
+    },
+  );
+
+  return log.split('\n')[0];
 }
