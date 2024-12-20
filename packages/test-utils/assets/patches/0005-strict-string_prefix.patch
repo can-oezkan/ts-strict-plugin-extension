@@ -1,0 +1,22 @@
+From ea95cbb2248642dbf368ec45cccd35cd029631b5 Mon Sep 17 00:00:00 2001
+From: Contributor 2 <contributor2@example.com>
+Date: Mon Sep 17 00:00:00 2001
+Subject: [PATCH] strict string_prefix
+
+---
+ src/string_prefix.ts | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/string_prefix.ts b/src/string_prefix.ts
+index 4bd8b61..9c10cb8 100644
+--- a/src/string_prefix.ts
++++ b/src/string_prefix.ts
+@@ -1,4 +1,3 @@
+-// @ts-strict-ignore
+-export function stringPrefix(prefix, str) {
++export function stringPrefix(prefix: string, str: string) {
+   return prefix + str;
+ }
+-- 
+2.45.2.windows.1
+

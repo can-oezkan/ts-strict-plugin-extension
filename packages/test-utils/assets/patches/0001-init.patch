@@ -1,0 +1,175 @@
+From 60ca42f3f40cf449757e93f2480f0504e4238bee Mon Sep 17 00:00:00 2001
+From: Contributor 0 <contributor0@example.com>
+Date: Mon Sep 17 00:00:00 2001
+Subject: [PATCH] init
+
+---
+ .gitignore            |  1 +
+ .vscode/settings.json |  3 +++
+ package-lock.json     | 29 +++++++++++++++++++++++++++++
+ package.json          |  7 +++++++
+ src/multiply.ts       |  7 +++++++
+ src/point.ts          | 14 ++++++++++++++
+ src/string_prefix.ts  |  3 +++
+ src/string_suffix.ts  |  3 +++
+ src/sum.ts            |  7 +++++++
+ tsconfig.json         |  9 +++++++++
+ 10 files changed, 83 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .vscode/settings.json
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 src/multiply.ts
+ create mode 100644 src/point.ts
+ create mode 100644 src/string_prefix.ts
+ create mode 100644 src/string_suffix.ts
+ create mode 100644 src/sum.ts
+ create mode 100644 tsconfig.json
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..40b878d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++node_modules/
+\ No newline at end of file
+diff --git a/.vscode/settings.json b/.vscode/settings.json
+new file mode 100644
+index 0000000..44aeb40
+--- /dev/null
++++ b/.vscode/settings.json
+@@ -0,0 +1,3 @@
++{
++  "typescript.tsdk": "node_modules\\typescript\\lib"
++}
+diff --git a/package-lock.json b/package-lock.json
+new file mode 100644
+index 0000000..1fa894e
+--- /dev/null
++++ b/package-lock.json
+@@ -0,0 +1,29 @@
++{
++  "name": "test-utils",
++  "version": "0.0.0",
++  "lockfileVersion": 3,
++  "requires": true,
++  "packages": {
++    "": {
++      "name": "test-utils",
++      "version": "0.0.0",
++      "devDependencies": {
++        "typescript": "^5.7.2"
++      }
++    },
++    "node_modules/typescript": {
++      "version": "5.7.2",
++      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.7.2.tgz",
++      "integrity": "sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==",
++      "dev": true,
++      "license": "Apache-2.0",
++      "bin": {
++        "tsc": "bin/tsc",
++        "tsserver": "bin/tsserver"
++      },
++      "engines": {
++        "node": ">=14.17"
++      }
++    }
++  }
++}
+diff --git a/package.json b/package.json
+new file mode 100644
+index 0000000..c0d7a99
+--- /dev/null
++++ b/package.json
+@@ -0,0 +1,7 @@
++{
++  "name": "test-utils",
++  "version": "0.0.0",
++  "devDependencies": {
++    "typescript": "^5.7.2"
++  }
++}
+diff --git a/src/multiply.ts b/src/multiply.ts
+new file mode 100644
+index 0000000..7124fae
+--- /dev/null
++++ b/src/multiply.ts
+@@ -0,0 +1,7 @@
++export function multiply(a, b) {
++  return a * b;
++}
++
++export function multiply_multi(...args) {
++  return args.reduce((x, sum) => x * sum, 1);
++}
+diff --git a/src/point.ts b/src/point.ts
+new file mode 100644
+index 0000000..761c4c5
+--- /dev/null
++++ b/src/point.ts
+@@ -0,0 +1,14 @@
++export class Point {
++  constructor(
++    private x,
++    private y,
++  ) {}
++
++  getX() {
++    return this.x;
++  }
++
++  getY() {
++    return this.y;
++  }
++}
+diff --git a/src/string_prefix.ts b/src/string_prefix.ts
+new file mode 100644
+index 0000000..dd544b1
+--- /dev/null
++++ b/src/string_prefix.ts
+@@ -0,0 +1,3 @@
++export function stringPrefix(prefix, str) {
++  return prefix + str;
++}
+diff --git a/src/string_suffix.ts b/src/string_suffix.ts
+new file mode 100644
+index 0000000..27ad4eb
+--- /dev/null
++++ b/src/string_suffix.ts
+@@ -0,0 +1,3 @@
++export function stringSuffix(suffix, str) {
++  return str + suffix;
++}
+diff --git a/src/sum.ts b/src/sum.ts
+new file mode 100644
+index 0000000..d95ab20
+--- /dev/null
++++ b/src/sum.ts
+@@ -0,0 +1,7 @@
++export function sum(a, b: number) {
++  return a + b;
++}
++
++export function sum_multi(...args: number[]) {
++  return args.reduce((x, sum) => x + sum, 0);
++}
+diff --git a/tsconfig.json b/tsconfig.json
+new file mode 100644
+index 0000000..0f8fb07
+--- /dev/null
++++ b/tsconfig.json
+@@ -0,0 +1,9 @@
++{
++  "compilerOptions": {
++    "strict": false,
++    "moduleResolution": "nodenext",
++    "module": "NodeNext",
++    "target": "ESNext",
++    "lib": ["ESNext"]
++  }
++}
+-- 
+2.45.2.windows.1
+

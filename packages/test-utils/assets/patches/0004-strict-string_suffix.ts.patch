@@ -1,0 +1,22 @@
+From 2b4c1ca6da68914cf5b0b60d1ffb2ca542c77d50 Mon Sep 17 00:00:00 2001
+From: Contributor 1 <contributor1@example.com>
+Date: Mon Sep 17 00:00:00 2001
+Subject: [PATCH] strict string_suffix.ts
+
+---
+ src/string_suffix.ts | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/string_suffix.ts b/src/string_suffix.ts
+index 7eccffc..18c35da 100644
+--- a/src/string_suffix.ts
++++ b/src/string_suffix.ts
+@@ -1,4 +1,3 @@
+-// @ts-strict-ignore
+-export function stringSuffix(suffix, str) {
++export function stringSuffix(suffix: string, str: string) {
+   return str + suffix;
+ }
+-- 
+2.45.2.windows.1
+

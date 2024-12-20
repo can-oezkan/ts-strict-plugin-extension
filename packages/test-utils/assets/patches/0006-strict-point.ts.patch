@@ -1,0 +1,27 @@
+From 05ed99828ee9396599b794b410393442b68c3f77 Mon Sep 17 00:00:00 2001
+From: Contributor 3 <contributor3@example.com>
+Date: Mon Sep 17 00:00:00 2001
+Subject: [PATCH] strict point.ts
+
+---
+ src/point.ts | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/src/point.ts b/src/point.ts
+index feee680..20a6df2 100644
+--- a/src/point.ts
++++ b/src/point.ts
+@@ -1,9 +1,5 @@
+-// @ts-strict-ignore
+ export class Point {
+-  constructor(
+-    private x,
+-    private y,
+-  ) {}
++  constructor(private x: number, private y: number) {}
+ 
+   getX() {
+     return this.x;
+-- 
+2.45.2.windows.1
+

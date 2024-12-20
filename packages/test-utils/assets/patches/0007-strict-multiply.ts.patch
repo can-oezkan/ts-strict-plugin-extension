@@ -1,0 +1,27 @@
+From 8a6ed344293c7e33a4b2669435eb66df9c0f685f Mon Sep 17 00:00:00 2001
+From: Contributor 4 <contributor4@example.com>
+Date: Mon Sep 17 00:00:00 2001
+Subject: [PATCH] strict multiply.ts
+
+---
+ src/multiply.ts | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/src/multiply.ts b/src/multiply.ts
+index f07f269..1b6e33d 100644
+--- a/src/multiply.ts
++++ b/src/multiply.ts
+@@ -1,8 +1,7 @@
+-// @ts-strict-ignore
+-export function multiply(a, b) {
++export function multiply(a: number, b: number) {
+   return a * b;
+ }
+ 
+-export function multiply_multi(...args) {
++export function multiply_multi(...args: number[]) {
+   return args.reduce((x, sum) => x * sum, 1);
+ }
+-- 
+2.45.2.windows.1
+

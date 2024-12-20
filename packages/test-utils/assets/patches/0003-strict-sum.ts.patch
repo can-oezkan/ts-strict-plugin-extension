@@ -1,0 +1,23 @@
+From 316d509784d73c2f5483bf65f461d816de0bef27 Mon Sep 17 00:00:00 2001
+From: Contributor 1 <contributor1@example.com>
+Date: Mon Sep 17 00:00:00 2001
+Subject: [PATCH] strict sum.ts
+
+---
+ src/sum.ts | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/sum.ts b/src/sum.ts
+index cb82193..c4bacc6 100644
+--- a/src/sum.ts
++++ b/src/sum.ts
+@@ -1,5 +1,4 @@
+-// @ts-strict-ignore
+-export function sum(a, b: number) {
++export function sum(a: number, b: number) {
+   return a + b;
+ }
+ 
+-- 
+2.45.2.windows.1
+
