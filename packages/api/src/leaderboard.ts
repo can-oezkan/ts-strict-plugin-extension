@@ -1,12 +1,8 @@
-import { TSStrictLeaderboard, TSStrictLeaderboardConfig } from '@ts-strict-plugin-extension/common';
+import { TSStrictLeaderboard } from '@ts-strict-plugin-extension/common';
 import { getInitialStrictIgnoreCommit, runGitCommand } from './git.js';
 
-export async function getLeaderboard(
-  directory: string,
-  config?: TSStrictLeaderboardConfig,
-): Promise<TSStrictLeaderboard> {
-  const initialCommit = config?.initialCommit ?? (await getInitialStrictIgnoreCommit(directory));
-
+export async function getLeaderboard(directory: string): Promise<TSStrictLeaderboard> {
+  const initialCommit = await getInitialStrictIgnoreCommit(directory);
   const log = await runGitCommand(
     ['log', `${initialCommit}..`, '-p', '-S', '// @ts-strict-ignore', '--diff-filter=ACDMRT'],
     { directory: directory },
