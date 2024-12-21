@@ -8,8 +8,5 @@
   "devDependencies": {
     "@ts-strict-plugin-extension/test-utils": "0.0.1"
   },
-  "peerDependencies": {
-    "@ts-strict-plugin-extension/common": "0.0.1"
-  },
   "type": "module"
 }

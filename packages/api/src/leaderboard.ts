@@ -1,5 +1,6 @@
-import { TSStrictLeaderboard } from '@ts-strict-plugin-extension/common';
 import { getInitialStrictIgnoreCommit, runGitCommand } from './git.js';
+
+export type TSStrictLeaderboard = { name: string; score: number }[];
 
 export async function getLeaderboard(directory: string): Promise<TSStrictLeaderboard> {
   const initialCommit = await getInitialStrictIgnoreCommit(directory);
