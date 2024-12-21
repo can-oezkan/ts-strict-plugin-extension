@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { getLeaderboard } from '@ts-strict-plugin-extension/api';
 
 export interface PrintLeaderboardOptions {

@@ -9,6 +9,8 @@
   "dependencies": {
     "@ts-strict-plugin-extension/api": "^0.0.1"
   },
-  "bin": "../../dist/cli/index.js",
+  "bin": {
+    "tsc-strict-leaderboard": "../../dist/cli/index.js"
+  },
   "type": "module"
 }

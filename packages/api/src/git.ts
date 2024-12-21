@@ -48,5 +48,10 @@ export async function getInitialStrictIgnoreCommit(directory: string): Promise<s
     },
   );
 
-  return log.split('\n')[0];
+  const commitHash = log.split('\n')[0];
+  if (commitHash == null) {
+    throw new Error('No commit found that added a `// @ts-strict-ignore` comment.');
+  }
+
+  return commitHash;
 }

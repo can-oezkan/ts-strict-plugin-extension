@@ -10,7 +10,7 @@ export async function getLeaderboard(directory: string): Promise<TSStrictLeaderb
   );
 
   const scores: Record<string, number> = {};
-  let currentCommitter: string | null = null;
+  let currentCommitter: string | undefined = undefined;
   let inRelevantSection = false;
 
   log
@@ -20,7 +20,7 @@ export async function getLeaderboard(directory: string): Promise<TSStrictLeaderb
       if (line.startsWith('Author:')) {
         // Extract the committer's name
         const match = line.match(/Author:\s(.+)\s<.+>/);
-        currentCommitter = match ? match[1] : null;
+        currentCommitter = match ? match[1] : undefined;
         if (currentCommitter && !(currentCommitter in scores)) {
           scores[currentCommitter] = 0;
         }
@@ -30,9 +30,9 @@ export async function getLeaderboard(directory: string): Promise<TSStrictLeaderb
       } else if (currentCommitter && inRelevantSection) {
         // Check for additions or removals in relevant sections
         if (line.startsWith('+') && line.includes('// @ts-strict-ignore')) {
-          scores[currentCommitter] -= 1;
+          scores[currentCommitter]! -= 1;
         } else if (line.startsWith('-') && line.includes('// @ts-strict-ignore')) {
-          scores[currentCommitter] += 1;
+          scores[currentCommitter]! += 1;
         }
       }
     });
