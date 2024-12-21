@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsc"
   },
   "dependencies": {
     "@ts-strict-plugin-extension/api": "^0.0.1"
   },
-  "bin": "dist/index.js",
+  "bin": "../../dist/cli/index.js",
   "type": "module"
 }

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "dist/",
     "strict": true,
+    "skipLibCheck": true,
     "target": "ES2022",
     "module": "NodeNext",
     "lib": ["ES2024"]

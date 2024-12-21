@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsc"
   },
   "devDependencies": {
     "@ts-strict-plugin-extension/test-utils": "0.0.1"
