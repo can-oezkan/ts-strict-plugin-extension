@@ -6,9 +6,12 @@ import { spawn } from 'node:child_process';
  * @param options The options to pass to the git command.
  * @returns The output of the git command.
  */
-export async function runGitCommand(args: string[], options?: { cwd?: string }): Promise<string> {
+export async function runGitCommand(
+  args: string[],
+  options?: { directory?: string },
+): Promise<string> {
   return new Promise((resolve, reject) => {
-    const childProcess = spawn('git', args, { cwd: options?.cwd });
+    const childProcess = spawn('git', args, { cwd: options?.directory });
 
     const stdoutBuffers: Buffer[] = [];
     const stderrBuffers: Buffer[] = [];
@@ -34,14 +37,14 @@ export async function runGitCommand(args: string[], options?: { cwd?: string }):
 /**
  * Get the commit hash of the first commit that added a `// @ts-strict-ignore` comment.
  *
- * @param directory The directory to search for the commit.
+ * @param directory The directory of the git repository.
  * @returns The commit hash of the first commit that added a `// @ts-strict-ignore` comment.
  */
 export async function getInitialStrictIgnoreCommit(directory: string): Promise<string> {
   const log = await runGitCommand(
-    ['log', '--reverse', '--format=%h', '-S', '// @ts-strict-ignore'],
+    ['log', '--reverse', '--format=%H', '-S', '// @ts-strict-ignore'],
     {
-      cwd: directory,
+      directory: directory,
     },
   );
 

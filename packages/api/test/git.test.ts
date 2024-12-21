@@ -8,8 +8,8 @@ import { getInitialStrictIgnoreCommit, runGitCommand } from '../src/git.js';
 test('runGitCommand', async () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'api-test-'));
 
-  await runGitCommand(['init'], { cwd: directory });
-  const output = await runGitCommand(['branch', '--show-current'], { cwd: directory });
+  await runGitCommand(['init'], { directory: directory });
+  const output = await runGitCommand(['branch', '--show-current'], { directory: directory });
 
   expect(output).toEqual('main\n');
 });
@@ -24,7 +24,7 @@ test('getInitialStrictIgnoreCommit', async () => {
   const commit = await getInitialStrictIgnoreCommit(directory);
 
   const commitMessage = await runGitCommand(['show', '-s', '--format=%s', commit], {
-    cwd: directory,
+    directory: directory,
   });
   expect(commitMessage).toBe('init ts strict plugin\n');
 });
