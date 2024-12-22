@@ -3,8 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsc"
   },
-  "type": "module"
+  "type": "module",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "README.md"
+  ]
 }

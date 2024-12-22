@@ -2,6 +2,8 @@
   "name": "@ts-strict-plugin-extension/cli",
   "version": "0.0.1",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "build": "tsc"
@@ -10,7 +12,12 @@
     "@ts-strict-plugin-extension/api": "^0.0.1"
   },
   "bin": {
-    "tsc-strict-leaderboard": "../../dist/cli/index.js"
+    "tsc-strict-leaderboard": "dist/index.js"
   },
-  "type": "module"
+  "type": "module",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "README.md"
+  ]
 }

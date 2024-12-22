@@ -2,6 +2,8 @@
   "name": "@ts-strict-plugin-extension/api",
   "version": "0.0.1",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "build": "tsc"
@@ -9,5 +11,10 @@
   "devDependencies": {
     "@ts-strict-plugin-extension/test-utils": "0.0.1"
   },
-  "type": "module"
+  "type": "module",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "README.md"
+  ]
 }
