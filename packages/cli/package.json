@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "vitest",
-    "build": "tsc"
+    "build": "tsc --build"
   },
   "dependencies": {
     "@ts-strict-plugin-extension/api": "^0.0.1"
