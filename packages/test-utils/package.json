@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
-  "exports": "./dist/setup.js",
+  "exports": {
+    ".": {
+      "types": "./dist/setup.d.ts",
+      "import": "./dist/setup.js"
+    }
+  },
   "scripts": {
     "test": "vitest",
     "build": "tsc"

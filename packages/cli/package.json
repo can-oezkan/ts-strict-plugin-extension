@@ -2,7 +2,12 @@
   "name": "@ts-strict-plugin-extension/cli",
   "version": "0.0.1",
   "license": "MIT",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "test": "vitest",
     "build": "tsc"

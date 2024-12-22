@@ -2,7 +2,12 @@
   "name": "@ts-strict-plugin-extension/api",
   "version": "0.0.1",
   "license": "MIT",
-  "exports": "./dist/leaderboard.js",
+  "exports": {
+    ".": {
+      "types": "./dist/leaderboard.d.ts",
+      "import": "./dist/leaderboard.js"
+    }
+  },
   "scripts": {
     "test": "vitest",
     "build": "tsc"
