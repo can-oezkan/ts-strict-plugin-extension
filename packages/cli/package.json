@@ -16,7 +16,7 @@
     "@ts-strict-plugin-extension/api": "^0.0.1"
   },
   "bin": {
-    "tsc-strict-leaderboard": "dist/index.js"
+    "tsc-strict-leaderboard": "dist/cli.js"
   },
   "type": "module",
   "files": [

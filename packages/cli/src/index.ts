@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { getLeaderboard } from '@ts-strict-plugin-extension/api';
 
 export interface PrintLeaderboardOptions {
@@ -10,16 +8,16 @@ export interface PrintLeaderboardOptions {
  * Prints the leaderboard to the console.
  * @param options Options for printing the leaderboard.
  */
-export function printLeaderboard(options?: PrintLeaderboardOptions) {
+export async function printLeaderboard(options?: PrintLeaderboardOptions) {
   switch (options?.output) {
     case 'json':
-      printLeaderboardJSON();
+      await printLeaderboardJSON();
       break;
     case 'formatted':
-      printLeaderboardFormatted();
+      await printLeaderboardFormatted();
       break;
     default:
-      printLeaderboardFormatted();
+      await printLeaderboardFormatted();
   }
 }
 
