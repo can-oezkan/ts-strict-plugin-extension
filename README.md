@@ -21,3 +21,9 @@ npm run build
 ```bash
 npm run test
 ```
+
+## Usage
+
+```
+npx @ts-strict-plugin-extension/cli
+```
