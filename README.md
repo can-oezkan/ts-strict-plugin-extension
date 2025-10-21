@@ -2,6 +2,12 @@
 
 This vscode extension adds a gamification aspect to incrementally applying strict mode to a code base.
 
+## Usage
+
+```
+npx @ts-strict-plugin-extension/cli
+```
+
 ## Clone
 
 ```bash
@@ -20,10 +26,4 @@ npm run build
 
 ```bash
 npm run test
-```
-
-## Usage
-
-```
-npx @ts-strict-plugin-extension/cli
 ```
